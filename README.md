@@ -4,7 +4,7 @@ Welcome to my personal portfolio repository! This project showcases my skills, p
 
 ## 🔗 Live Demo
 
-[View Portfolio](#)
+[View Portfolio](https://vipulchauhan89.github.io/Personal-portfolio/#home)
 
 ## 🚀 Features
 
@@ -20,13 +20,13 @@ Welcome to my personal portfolio repository! This project showcases my skills, p
 ## 📂 Setup
 
 ```bash
-git clone https://github.com/your-username/your-portfolio.git
-cd your-portfolio
+git clone https://github.com/VipulChauhan89/Personal-portfolio.git
+cd Personal-portfolio
 npm install
 npm run dev
 ```
 
 ## 📬 Contact
 
-- **Email:** [your-email@example.com](mailto\:your-email@example.com)
-- **LinkedIn:** [Your Profile](#)
+- **Email:** [vipulchauhan548@gmail.com](mailto\:vipulchauhan548@gmail.com)
+- **LinkedIn:** [Vipul Chauhan](https://www.linkedin.com/in/vipulchauhan89/)
