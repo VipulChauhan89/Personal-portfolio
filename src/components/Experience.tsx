@@ -12,28 +12,31 @@ const experience = [
 
 const moveFromRight: Variants = {
     offscreen: {
-      x: 500
+      x: window.innerWidth,
+      scale: 0,
     },
     onscreen: {
       x: 0,
+      scale: 1,
       transition: {
         type: "spring",
-        bounce: 0.2,
-        duration: 1
+        bounce: 0.1,
+        duration: 1.5
       }
     }
 };
-
 const moveFromLeft: Variants = {
     offscreen: {
-      x: -500
+      x: -window.innerWidth,
+      scale: 0,
     },
     onscreen: {
       x: 0,
+      scale: 1,
       transition: {
         type: "spring",
-        bounce: 0.2,
-        duration: 1
+        bounce: 0.1,
+        duration: 1.5
       }
     }
 };

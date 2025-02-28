@@ -57,7 +57,7 @@ export default function Navbar() {
     },[]);
 
     return(
-        <div className="relative">
+        <div>
             <motion.div 
                 initial={false}
                 animate={{height: isOpen?'280px':'60px'}}
@@ -65,7 +65,7 @@ export default function Navbar() {
                 className="w-full bg-transparent flex fixed top-0 border-b-[1px] border-gray-500 backdrop-blur-sm pt-[10px] z-10"
             >
                 <motion.a
-                    initial={{ opacity: 0, scale: 0.5, x: -1000 }}
+                    initial={{ opacity: 0, scale: 0.5, x: -100 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.3, ease: [0, 0.71, 0.8, 1.01] }}
                     className={`pt-[5px] pl-[20px] font-black ${isDark?"text-white":"text-black"} text-[20px] font-poetsen flex gap-1 hover:cursor-pointer group hover:gap-5`}
@@ -77,9 +77,9 @@ export default function Navbar() {
                     <div className="flex absolute right-[10px]">
                         <motion.div 
                             className="mt-[5px]"
-                            initial={{ opacity: 0, scale: 0.5, x: 1000 }}
+                            initial={{ opacity: 0, scale: 0.5, x: window.innerWidth }}
                             animate={{ opacity: 1, scale: 1, x: 0 }}
-                            transition={{ duration: 1, delay: 1, ease: [0, 0.71, 0.2, 1.01] }}
+                            transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
                         >
                             <div className={`border-[1px] border-black w-[52px] h-[30px] rounded-full ${isDark?"bg-blue-500":"bg-yellow-400"}`} onClick={toggleDark}>
                                 {(!isDark)?(
@@ -92,9 +92,9 @@ export default function Navbar() {
                         </motion.div>
                         {links.map((item,key) => 
                             <motion.a 
-                                initial={{ opacity: 0, scale: 0.5, x: 1000 }}
+                                initial={{ opacity: 0, scale: 0.5, x: window.innerWidth }}
                                 animate={{ opacity: 1, scale: 1, x: 0 }}
-                                transition={{ duration: 1, delay: 1+key/10, ease: [0, 0.71, 0.2, 1.01] }} 
+                                transition={{ duration: 1, delay: key/10, ease: [0, 0.71, 0.2, 1.01] }} 
                                 className={`pt-[5px] pl-[10px] text-[18px] ${item.name===navState?"underline text-green-600 font-black":isDark?"text-white font-semibold":"text-black font-semibold"} hover:font-black font-poetsen`}
                                 key={item.id}
                                 href={item.to}
@@ -109,9 +109,9 @@ export default function Navbar() {
                     <div className="absolute flex right-[10px] mt-[5px]">
                         <motion.div 
                             className="relative right-[10px]"
-                            initial={{ opacity: 0, scale: 0.5, x: 1000 }}
+                            initial={{ opacity: 0, scale: 0.5, x: window.innerWidth }}
                             animate={{ opacity: 1, scale: 1, x: 0 }}
-                            transition={{ duration: 1, delay: 1, ease: [0, 0.71, 0.2, 1.01] }}
+                            transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
                         >
                             <div className={`border-[1px] border-black w-[52px] h-[27px] rounded-full ${isDark?"bg-blue-500":"bg-yellow-400"}`} onClick={toggleDark}>
                                 {(!isDark)?(
@@ -123,16 +123,30 @@ export default function Navbar() {
                             </div>
                         </motion.div>
                         {isOpen ? (
-                            <img className="h-[24px] w-[24px]" src={isDark?xMarkWhite:xMarkBlack} onClick={() => handleIsOpen(false)}></img>
+                            <motion.img
+                                initial={{ opacity: 0, scale: 0.5, x: window.innerWidth }}
+                                animate={{ opacity: 1, scale: 1, x: 0 }}
+                                transition={{ duration: 0.8, ease: [0, 0.71, 0.2, 1.01] }} 
+                                className="h-[24px] w-[24px]" 
+                                src={isDark?xMarkWhite:xMarkBlack} 
+                                onClick={() => handleIsOpen(false)}
+                            />
                         ):(
-                            <img className="h-[24px] w-[24px]" src={isDark?barsWhite:barsBlack} onClick={() => handleIsOpen(true)}></img>        
+                            <motion.img
+                                initial={{ opacity: 0, scale: 0.5, x: window.innerWidth }}
+                                animate={{ opacity: 1, scale: 1, x: 0 }}
+                                transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }} 
+                                className="h-[24px] w-[24px]" 
+                                src={isDark?barsWhite:barsBlack} 
+                                onClick={() => handleIsOpen(true)}
+                            />       
                         )
                     }
                     </div>
                     <div className="grid absolute right-[10px] top-[40px]">
                         {(isOpen) && (links.map((item,key) => 
                             <motion.a 
-                                initial={{ opacity: 0, scale: 0.5, x: 100 }}
+                                initial={{ opacity: 0, scale: 0.5, x: window.innerWidth }}
                                 animate={{ opacity: 1, scale: 1, x: 0 }}
                                 transition={{ duration: 1, delay: 0+key/10, ease: [0, 0.71, 0.2, 1.01] }} 
                                 variants={variants}

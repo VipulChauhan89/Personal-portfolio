@@ -19,10 +19,12 @@ const projects = [
 
 const moveFromRight: Variants = {
     offscreen: {
-      x: 1500
+      x: window.innerWidth,
+      scale: 0,
     },
     onscreen: {
       x: 0,
+      scale: 1,
       transition: {
         type: "spring",
         bounce: 0.1,
@@ -32,10 +34,12 @@ const moveFromRight: Variants = {
 };
 const moveFromLeft: Variants = {
     offscreen: {
-      x: -1500
+      x: -window.innerWidth,
+      scale: 0,
     },
     onscreen: {
       x: 0,
+      scale: 1,
       transition: {
         type: "spring",
         bounce: 0.1,
