@@ -50,53 +50,30 @@ export default function Experience() {
             </div>
             <div className="relative flex justify-center">
                 <div className="absolute w-[6px] bg-green-600 h-full left-1/2 transform -translate-x-1/2"></div>
-                <div className="w-full">
+                <div className="w-full relative">
                     {experience.map((xp, key) => (
-                        <motion.div className={`flex items-center my-[20px] ${key%2===0?"justify-end":"justify-start"}`} key={key} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}>
-                            {key%2===0 && ( 
-                                <motion.div className="flex w-1/2" variants={moveFromRight}>
-                                    <div className="pt-[30px] ml-[30px]">
-                                        <img className="h-[40px] w-[40px]" src={xp.logo}/>
-                                    </div>
-                                    <div>
-                                        <p className={`mx-[50px] text-[30px] font-poetsen hover:cursor-pointer ${isDark?"text-white":"text-black"}`}>
-                                            {xp.position}
-                                        </p>
-                                        <p className={`mx-[50px] text-[20px] font-poetsen font-thin ${isDark?"text-white":"text-black"}`}>
-                                            {xp.companyName} · {xp.type}
-                                        </p>
-                                        <p className={`mx-[50px] text-[15px] font-poetsen font-thin ${isDark?"text-white":"text-black"}`}>
-                                            {xp.DateOfJoining} - {xp.DateofExit}
-                                        </p>
-                                        <p className={`mx-[50px] text-[15px] font-poetsen font-thin ${isDark?"text-white":"text-black"}`}>
-                                            {xp.location}
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            )}
-                            {key%2!==0 && (
-                                <motion.div className="flex justify-end w-1/2" variants={moveFromLeft}>
+                        <motion.div className="flex justify-center m-[20px]" key={key} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}>
+                            <motion.div className={`${isDark?"bg-black":"bg-white"} border-[2px] border-green-600 rounded-2xl  flex w-[300px] md:w-[800px] p-[10px]`} variants={key%2==0?moveFromLeft:moveFromRight}>
                                     <div className="flex">
-                                        <div className="pt-[30px] ml-[50px]">
+                                        <div className="pt-[30px]">
                                             <img className="h-[40px] w-[40px]" src={xp.logo}/>
                                         </div>
                                         <div>
-                                            <p className={`mx-[50px] text-[30px] font-poetsen hover:cursor-pointer ${isDark?"text-white":"text-black"}`}>
+                                            <p className={`mx-[10px] text-[30px] font-poetsen hover:cursor-pointer ${isDark?"text-white":"text-black"}`}>
                                                 {xp.position}
                                             </p>
-                                            <p className={`mx-[50px] text-[20px] font-poetsen font-thin ${isDark?"text-white":"text-black"}`}>
+                                            <p className={`mx-[10px] text-[20px] font-poetsen font-thin ${isDark?"text-white":"text-black"}`}>
                                                 {xp.companyName} · {xp.type}
                                             </p>
-                                            <p className={`mx-[50px] text-[15px] font-poetsen font-thin ${isDark?"text-white":"text-black"}`}>
+                                            <p className={`mx-[10px] text-[15px] font-poetsen font-thin ${isDark?"text-white":"text-black"}`}>
                                                 {xp.DateOfJoining} - {xp.DateofExit}
                                             </p>
-                                            <p className={`mx-[50px] text-[15px] font-poetsen font-thin ${isDark?"text-white":"text-black"}`}>
+                                            <p className={`mx-[10px] text-[15px] font-poetsen font-thin ${isDark?"text-white":"text-black"}`}>
                                                 {xp.location}
                                             </p>
                                         </div>
                                     </div>
                                 </motion.div>
-                            )}
                         </motion.div>
                     ))}
                 </div>

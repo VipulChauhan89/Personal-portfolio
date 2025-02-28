@@ -59,38 +59,20 @@ export default function Projects() {
                 <div>
                     {projects.map((project, key) => (
                         <motion.div className={`flex justify-center mx-[40px] rounded-lg my-[30px] relative ${isDark?"hover:bg-slate-800":"hover:bg-slate-200"}`} key={key} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.3 }}>
-                            {key%2===0 && ( 
-                                <motion.div className="flex justify-end hover:cursor-pointer pb-[5px]" variants={moveFromRight}>
-                                    <div>
-                                        <p className={`mx-[10px] text-[30px] font-poetsen underline  ${isDark?"text-white":"text-black"} flex gap-2 pr-[30px]`}>
-                                            {project.name} 
-                                            <ArrowTopRightOnSquareIcon width={40} height={40} className="text-green-600 absolute right-[5px]"/>
-                                        </p>
-                                        <p  className={`mx-[10px] text-[20px] font-poetsen ${isDark?"text-white":"text-black"}`}>
-                                            {project.time}
-                                        </p>
-                                        <p  className={`mx-[30px] text-[15px] font-poetsen ${isDark?"text-white":"text-black"}`}>
-                                            {project.detail}
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            )}
-                            {key%2!==0 && (
-                                <motion.div className="flex justify-start hover:cursor-pointer pb-[5px]" variants={moveFromLeft}>
-                                    <div>
-                                        <p className={`mx-[10px] text-[30px] font-poetsen underline  ${isDark?"text-white":"text-black"} flex gap-2 pr-[30px]`}>
-                                            {project.name} 
-                                            <ArrowTopRightOnSquareIcon width={40} height={40} className="text-green-600 absolute right-[5px]"/>
-                                        </p>
-                                        <p  className={`mx-[10px] text-[20px] font-poetsen ${isDark?"text-white":"text-black"}`}>
-                                            {project.time}
-                                        </p>
-                                        <p  className={`mx-[30px] text-[15px] font-poetsen ${isDark?"text-white":"text-black"}`}>
-                                            {project.detail}
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            )}
+                            <motion.div className={`flex ${key%2==0?"justify-end":"justify-start"} hover:cursor-pointer pb-[5px]`} variants={key%2===0?moveFromRight:moveFromLeft}>
+                                <div>
+                                    <p className={`mx-[10px] text-[30px] font-poetsen underline  ${isDark?"text-white":"text-black"} flex gap-2 pr-[30px]`}>
+                                        {project.name} 
+                                        <ArrowTopRightOnSquareIcon width={40} height={40} className="text-green-600 absolute right-[5px]"/>
+                                    </p>
+                                    <p  className={`mx-[10px] text-[20px] font-poetsen ${isDark?"text-white":"text-black"}`}>
+                                        {project.time}
+                                    </p>
+                                    <p  className={`mx-[30px] text-[15px] font-poetsen ${isDark?"text-white":"text-black"}`}>
+                                        {project.detail}
+                                    </p>
+                                </div>
+                            </motion.div>
                         </motion.div>
                     ))}
                 </div>
