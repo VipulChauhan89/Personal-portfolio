@@ -130,7 +130,7 @@ export default function Home() {
                         </a>
                     </motion.div> 
                 </div>
-                <div className="relative flex justify-center items-center mb-[50px]">
+                <div className="relative flex justify-center items-center mb-[50px] overflow-hidden">
                     <motion.div
                         animate={{
                             scale: [1, 1.5, 1],
