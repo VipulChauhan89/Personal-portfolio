@@ -52,7 +52,7 @@ export default function Experience() {
                 <div className="absolute w-[6px] bg-green-600 h-full left-1/2 transform -translate-x-1/2"></div>
                 <div className="w-full">
                     {experience.map((xp, key) => (
-                        <motion.div className={`flex items-center my-[20px] ${key%2===0?"justify-end":"justify-start"}`} key={key} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 1 }}>
+                        <motion.div className={`flex items-center my-[20px] ${key%2===0?"justify-end":"justify-start"}`} key={key} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}>
                             {key%2===0 && ( 
                                 <motion.div className="flex w-1/2" variants={moveFromRight}>
                                     <div className="pt-[30px] ml-[30px]">

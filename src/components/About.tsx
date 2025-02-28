@@ -51,7 +51,7 @@ export default function About() {
                       className="flex justify-center mb-[20px]" 
                       initial="offscreen" 
                       whileInView="onscreen" 
-                      viewport={{ once: true, amount: 0.8 }}
+                      viewport={{ once: true, amount: 0.3 }}
                     >
                       <motion.p 
                         className={`mx-[50px] text-[30px] ${isDark?"text-white":"text-black"} font-poetsen justify-evenly`} variants={key%2==0?moveFromRight:moveFromLeft}

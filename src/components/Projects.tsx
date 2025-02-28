@@ -58,7 +58,7 @@ export default function Projects() {
             <div className="relative flex justify-center">
                 <div>
                     {projects.map((project, key) => (
-                        <motion.div className={`flex justify-center mx-[40px] rounded-lg my-[30px] relative ${isDark?"hover:bg-slate-800":"hover:bg-slate-200"}`} key={key} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 1 }}>
+                        <motion.div className={`flex justify-center mx-[40px] rounded-lg my-[30px] relative ${isDark?"hover:bg-slate-800":"hover:bg-slate-200"}`} key={key} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.3 }}>
                             {key%2===0 && ( 
                                 <motion.div className="flex justify-end hover:cursor-pointer pb-[5px]" variants={moveFromRight}>
                                     <div>
