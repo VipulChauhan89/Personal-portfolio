@@ -41,9 +41,9 @@ export default function About() {
                 <h1 className="font-black text-green-600 text-[60px] font-poetsen underline">About</h1>
             </div>
             <div>
-                {paragraph.map((item,keys)=>
-                    <motion.div className="flex justify-center mb-[20px]" initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}>
-                        <motion.p className={`mx-[50px] text-[30px] ${isDark?"text-white":"text-black"} font-poetsen justify-evenly`} variants={keys%2==0?moveFromRight:moveFromLeft}>{item.para}</motion.p>
+                {paragraph.map((item,key)=>
+                    <motion.div key={key} className="flex justify-center mb-[20px]" initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}>
+                        <motion.p className={`mx-[50px] text-[30px] ${isDark?"text-white":"text-black"} font-poetsen justify-evenly`} variants={key%2==0?moveFromRight:moveFromLeft}>{item.para}</motion.p>
                     </motion.div>
                 )}
             </div>

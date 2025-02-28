@@ -88,7 +88,7 @@ export default function Home() {
                                 Github
                             </motion.h1>
                         </a>
-                        <a href="src/assets/Resume_VipulChauhan.pdf" download={true}>
+                        <a href={`${import.meta.env.BASE_URL}/Public/Resume_VipulChauhan.pdf`} download={true}>
                             <motion.h1 whileHover={{ 
                                     scale: 1.1, 
                                     backgroundColor: "#38A169",

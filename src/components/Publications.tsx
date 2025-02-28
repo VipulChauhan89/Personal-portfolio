@@ -20,13 +20,12 @@ export default function Publications() {
             </div>
             <div className={`flex justify-center mx-[40px] py-[5px] rounded-lg ${isDark?"hover:bg-slate-800":"hover:bg-slate-200"}`}>
                 {publications.map((publication,key) => (
-                    <a href={publication.link}>
+                    <a key={key} href={publication.link}>
                         <motion.div 
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 2, ease: "easeOut" }}
                             viewport={{ once: true }}
-                            key={key}
                         >
                             <div className="flex justify-center">
                                 <div>

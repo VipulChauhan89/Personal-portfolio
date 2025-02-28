@@ -57,7 +57,7 @@ export default function Navbar() {
     },[]);
 
     return(
-        <div>
+        <div className="relative">
             <motion.div 
                 initial={false}
                 animate={{height: isOpen?'280px':'60px'}}

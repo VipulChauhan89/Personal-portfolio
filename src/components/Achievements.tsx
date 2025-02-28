@@ -17,10 +17,8 @@ export default function Achievements() {
             <div className="flex justify-center">
                 <div>
                     {achievements.map((achievement,key) => (
-                        <a href={achievement.link}>
+                        <a key={key} href={achievement.link}>
                             <motion.div 
-                                
-                                key={key} 
                                 className={`mx-[20px] mb-[10px] px-[10px] py-[4px] rounded-md ${isDark?"hover:bg-slate-800":"hover:bg-slate-200"} relative`}
                             >
                                 <div>
