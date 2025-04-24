@@ -1,10 +1,12 @@
 import { useSelector } from "react-redux";
 import { motion, Variants } from "framer-motion";
+import TcsLogo from "../assets/tcs_logo.png";
 import AccentureLogo from "../assets/accenture_logo.jpeg";
 import IncloudoLogo from "../assets/incloudo_logo.jpeg";
 import InsigniaConsultancySolutionsLogo from "../assets/insignia_consultancy_solutions_logo.jpeg";
 
 const experience = [
+    { companyName:"Tata Consultancy Services", logo:TcsLogo, type:"Full-time", linkedIn:"https://www.linkedin.com/company/tata-consultancy-services/", position:"System Engineer", location:"Pune, Maharashtra, India · On-site", DateOfJoining:"April 2025", DateofExit:"Present" },
     { companyName:"Accenture", logo:AccentureLogo, type:"Full-time", linkedIn:"https://www.linkedin.com/company/accenture/", position:"Associate Software Engineer", location:"Gurugram, Haryana, India · On-site", DateOfJoining:"Jul 2024", DateofExit:"Sep 2024" },
     { companyName:"Incloudo", logo:IncloudoLogo, type:"Internship", linkedIn:"https://www.linkedin.com/company/incloudo/", position:"DevOps Intern", location:"Remote", DateOfJoining:"Jul 2023", DateofExit:"Aug 2023" },
     { companyName:"Insignia Consultancy Solutions",logo:InsigniaConsultancySolutionsLogo, type:"Internship", linkedIn:"https://www.linkedin.com/company/insignia-consultancy-solutions/", position:"Java Backend Intern", location:"Remote", DateOfJoining:"May 2023", DateofExit:"Aug 2023" },
@@ -56,7 +58,7 @@ export default function Experience() {
                             <motion.div className={`${isDark?"bg-black":"bg-white"} border-[2px] border-green-600 rounded-2xl  flex w-[300px] md:w-[800px] p-[10px]`} variants={key%2==0?moveFromLeft:moveFromRight}>
                                     <div className="flex">
                                         <div className="pt-[30px]">
-                                            <img className="h-[40px] w-[40px]" src={xp.logo}/>
+                                            <img className="h-[40px] w-[40px] bg-white" src={xp.logo}/>
                                         </div>
                                         <div>
                                             <p className={`mx-[10px] text-[30px] font-poetsen hover:cursor-pointer ${isDark?"text-white":"text-black"}`}>
